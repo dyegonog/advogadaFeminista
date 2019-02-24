@@ -8,11 +8,26 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire';
+
+const config = {
+  apiKey: "AIzaSyAVd7-brEPb4mCgWf8vPvtyspCIOGly-U8",
+  authDomain: "advogadafeminista.firebaseapp.com",
+  databaseURL: "https://advogadafeminista.firebaseio.com",
+  projectId: "advogadafeminista",
+  storageBucket: "advogadafeminista.appspot.com",
+  messagingSenderId: "555326565824"
+};
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    AngularFireModule.initializeApp(config), 
+    AngularFireDatabaseModule],
   providers: [
     StatusBar,
     SplashScreen,
